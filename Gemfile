@@ -42,5 +42,6 @@ group :development do
   gem 'rails-controller-testing'
 end
 gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'devise'
 gem 'pry-rails'
