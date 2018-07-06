@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  # get 'bookmarks/show'
+  # get 'bookmarks/new'
+  # get 'bookmarks/edit'
   resources :topics do
- # #34
-     #resources :bookmarks, except: [:index]
+     resources :bookmarks, except: [:index]
    end
   root 'welcome#index'
   get 'about' => 'welcome#about'

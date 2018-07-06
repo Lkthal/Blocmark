@@ -10,5 +10,15 @@ require 'random_data'
 
  topics = Topic.all
 
+
+ 5.times do
+   Bookmark.create!(
+     topic: topics.sample,
+     url: RandomData.random_sentence
+   )
+ end
+ bookmarks = Bookmark.all
+
  puts "Seed finished"
- puts "#{Topic.count} topiccreated"
+ puts "#{Topic.count} topic created"
+ puts "#{Bookmark.count} bookmark created"
