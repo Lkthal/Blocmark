@@ -1,6 +1,10 @@
 class TopicsController < ApplicationController
+
+  before_action :authenticate_user!, except: [ :index, :show ]
+
   def index
     @topics = Topic.all
+
   end
 
   def show
@@ -9,6 +13,7 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+
   end
 
    def create
@@ -29,7 +34,7 @@ class TopicsController < ApplicationController
 
   def update
      @topic = Topic.find(params[:id])
-
+     authorize @topics
      if @topic.update_attributes(topic_params)
         flash[:notice] = "Topic was updated."
        redirect_to @topic
