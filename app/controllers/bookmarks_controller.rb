@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
 
-  before_action :authenticate_user!, except: [ :show ]
+  # before_action :authenticate_user!, except: [ :show ]
 
   def show
     @topic = Topic.find(params[:topic_id])
@@ -17,11 +17,11 @@ class BookmarksController < ApplicationController
 
   def create
       @topic = Topic.find(params[:topic_id])
-      # @bookmark = Bookmark.new(bookmark_params)
-      @bookmark = @topic.bookmarks.build(bookmark_params)
-      authorize @bookmark
+      @bookmark = Bookmark.new(bookmark_params)
 
-      if @bookmark.save
+      authorize @bookmark
+      # binding.pry
+      if @bookmark.save!
         flash[:notice] = "Bookmark was saved."
         redirect_to [@topic, @bookmark]
       else
@@ -68,7 +68,7 @@ class BookmarksController < ApplicationController
  private
 
 def bookmark_params
-  params.require(:bookmark).permit(:url)
+  params.require(:bookmark).permit(:url, :topic_id)
 end
 
 end

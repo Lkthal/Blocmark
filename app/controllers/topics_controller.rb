@@ -30,11 +30,11 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+
   end
 
   def update
      @topic = Topic.find(params[:id])
-     authorize @topics
      if @topic.update_attributes(topic_params)
         flash[:notice] = "Topic was updated."
        redirect_to @topic
