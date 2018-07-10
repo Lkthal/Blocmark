@@ -30,6 +30,5 @@ class IncomingController < ApplicationController
      @bookmark = @topic.bookmarks.create(url: @url)
     # Assuming all went well.
     head 200
-    
   end
 end
