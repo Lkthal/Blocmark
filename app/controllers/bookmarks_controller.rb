@@ -18,9 +18,7 @@ class BookmarksController < ApplicationController
   def create
       @topic = Topic.find(params[:topic_id])
       @bookmark = Bookmark.new(bookmark_params)
-
       authorize @bookmark
-      # binding.pry
       if @bookmark.save!
         flash[:notice] = "Bookmark was saved."
         redirect_to [@topic, @bookmark]
@@ -68,7 +66,7 @@ class BookmarksController < ApplicationController
  private
 
 def bookmark_params
-  params.require(:bookmark).permit(:url, :topic_id)
+  params.require(:bookmark).permit(:url)
 end
 
 end
