@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'likes/index'
+  # get 'likes/index'
   # get 'bookmarks/show'
   # get 'bookmarks/new'
   # get 'bookmarks/edit'
@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'about' => 'welcome#about'
   devise_for :users
+  post :incoming, to: 'incoming#create'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

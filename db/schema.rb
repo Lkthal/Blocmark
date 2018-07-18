@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_04_075835) do
+ActiveRecord::Schema.define(version: 2018_07_11_011451) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "url"

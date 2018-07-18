@@ -9,6 +9,8 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @bookmarks = @topic.bookmarks
+    @bookmark = Bookmark.new
   end
 
   def new
@@ -18,8 +20,6 @@ class TopicsController < ApplicationController
 
    def create
      @topic = Topic.new(topic_params)
-     @topic.user = current_user
-
      if @topic.save
        redirect_to @topic, notice: "Topic was saved successfully."
      else
