@@ -6,7 +6,11 @@
 	</div>
 	<div class="col-md-4">
 
+<<<<<<< HEAD
     <!-- <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %> -->
+=======
+    <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
+>>>>>>> 669c3770873057054b42a379a59b9c57f1e03662
 
     <% if policy(@bookmark).edit? %>
 		<%= link_to "Edit", edit_topic_bookmark_path(@bookmark.topic, @bookmark), class: "btn btn-success" %>
