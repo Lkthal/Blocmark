@@ -10,19 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_09_015616) do
+ActiveRecord::Schema.define(version: 2018_07_04_075835) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "url"
     t.integer "topic_id"
-    t.integer  "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["topic_id"], name: "index_bookmarks_on_topic_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
-
-  # add_index "bookmarks", ["topic_id"], name: "index_bookmarks_on_topic_id"
-  # add_index "bookmarks", ["user_id"], name: "i-undex_bookmarks_on_user_id"
 
   create_table "topics", force: :cascade do |t|
     t.string "title"
@@ -43,12 +41,11 @@ ActiveRecord::Schema.define(version: 2018_07_09_015616) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
