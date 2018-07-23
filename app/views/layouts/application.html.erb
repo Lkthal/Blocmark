@@ -14,6 +14,8 @@
       <ul class="nav nav-tabs">
           <li><%= link_to "Blocmarks", root_path %></li>
           <li><%= link_to "Topics", topics_path %></li>
+          <li><%= link_to "My Bookmark", user_path(current_user) %></li>
+
           <% if user_signed_in? %>
             <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
             <li class="pull-right"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>

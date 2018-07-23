@@ -1,2 +1,34 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1><%= @user.email%></h1>
+  </div>
+  <div class="panel-body">
+
+ <h3>My Bookmarks:</h3>
+ <div class="row">
+   <% @user_bookmarks.each do |bookmark| %>
+    <h2><%= "#{bookmark.topic.title}" %></h2>
+
+      <p><%= link_to bookmark.url, bookmark.url %></p>
+        <% link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
+        <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+        <br>
+  <% end %>
+  </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+  <h3>Liked Bookmarks:</h3>
+  <div class="row">
+    <% @liked_bookmarks.each do |bookmark| %>
+     <h2><%= "#{bookmark.topic.title}" %></h2>
+
+       <p><%= link_to bookmark.url, bookmark.url %></p>
+         <% link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
+         <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+         <br>
+   <% end %>
+  </div>
+</div>

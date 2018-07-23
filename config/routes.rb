@@ -7,8 +7,9 @@ Rails.application.routes.draw do
    end
   root 'welcome#index'
   get 'about' => 'welcome#about'
+  # get 'users/show'
   devise_for :users
-  resources :users, only: [:show]
+    resources :users, only: [:show]
   post :incoming, to: 'incoming#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
