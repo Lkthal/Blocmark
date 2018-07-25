@@ -5,8 +5,10 @@ Blockmark is a web base app that allows user to organize their bookmark and save
 ### Installing
 
 Clone the project to local directory to further build off the project
+
 ```
 git clone git@github.com:Lkthal/Pokeipedia.git
+
 ```
 
 Make sure you have ruby install
@@ -27,6 +29,17 @@ To deploy run code below in terminal
 - RSpec
 - Shoulda
 - Figaro
+
+## User Stories
+- As a user, I want to sign up for a free account by providing a user name, password and email
+- As a user, I want to sign in and out of Blocmarks
+- As a user, I want to email a URL to Blocmarks and have it saved in the Blocmarks database
+- As a user, I want to see an index of all topics and their bookmarks
+- As a user, I want to create, read, update, and delete bookmarks
+- As a user, I want to be the only one allowed to delete and update my bookmarks
+- As a user, I want to "like and unlike" bookmarks created by other users
+- As a user, I want to see a list of bookmarks on my personal profile that I've added or liked
+
 
 ## License
 
