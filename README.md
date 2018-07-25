@@ -1,6 +1,6 @@
-# Blockmark
+# Blocmark
 
-Blockmark is a web base app that allows user to organize their bookmark and save them by topic. Blockmark is very much like a clone with pinterest with the exception of user being able to email a webpage url to blockmark and it will automatically save and add the bookmark to the user profile page. 
+Blocmark is a web base app that allows user to organize their bookmark and save them by topic. Blocmark is very much like a clone with pinterest with the exception of user being able to email a webpage url to blockmark and it will automatically save and add the bookmark to the user profile page. 
 
 ### Installing
 
